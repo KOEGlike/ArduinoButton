@@ -3,7 +3,7 @@
 #include <Arduino.h>
 #include <functional>
 
-Button::Button(int pin, std::function<void()> press, std::function<void()> longPress, bool* globalPressed) {
+AsyncButton::AsyncButton(int pin, std::function<void()> press, std::function<void()> longPress, bool* globalPressed) {
     m_pin = pin;
     m_globalPressed = globalPressed;
     m_longPress = longPress;

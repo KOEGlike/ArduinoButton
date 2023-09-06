@@ -1,8 +1,8 @@
-#ifndef BUTTON_HPP
-#define BUTTON_HPP
+#ifndef ASYNC_BUTTON_HPP
+#define ASYNC_BUTTON_HPP
 #include <functional>
 
-class Button {
+class AsyncButton {
 protected:
     int m_pin;
     bool* m_globalPressed;
@@ -11,7 +11,7 @@ protected:
     unsigned long millisForLongPress = 300, debounceInMillis = 2, pressedForMillis = 0, pressStartInMillies;
 
 public:
-    Button(int pin, std::function<void()> press = []() {}, std::function<void()> longPress = []() {}, bool* globalPressed);
+    AsyncButton(int pin, std::function<void()> press = []() {}, std::function<void()> longPress = []() {}, bool* globalPressed);
     void check();
 
 };
