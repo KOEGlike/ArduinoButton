@@ -9,7 +9,7 @@ AsyncButton btn1 (btn1pin,[&](){Serial.println("btn 1 short");}, [&](){Serial.pr
 AsyncButton btn2 (btn2pin,[&](){Serial.println("btn 2 short");}, [&](){Serial.println("btn2 long");});
 
 void setup() {
-  ButtonManager.link(std::vector<AsyncButton>{btn1, btn2}, [&](){Serial.println("duble");});
+  ButtonManager.link(std::vector<AsyncButton*>{&btn1, &btn2}, [&](){Serial.println("duble");});
 }
 
 void loop() {
