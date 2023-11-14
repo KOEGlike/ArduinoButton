@@ -37,9 +37,9 @@ class ButtonManager_t {
     public:
         void link(std::vector<AsyncButton*> buttons, std::function<void()> onPress, int maxDelta=40);
         void check();
+        void addButton(AsyncButton* button);
         friend class Button;
     protected:
-        void addButton(AsyncButton* button);
     	std::map<unsigned int, AsyncButton*> buttons;
         std::map<unsigned int, ButtonLinkStruct> buttonLinks;
         unsigned int currentMaxButtonId=0,currentMaxLinkId=0, asyncId;
